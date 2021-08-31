@@ -1,11 +1,10 @@
-
-import {Users} from './data.js'
+import { Rooms } from "./data.js";
 
 export const resolvers = {
-  users: async (_) => {
-    return Users;
+  rooms: async (_) => {
+    return Rooms;
   },
-  user: async ({ id }, context) => {
-    return Users.find((user) => user.id == id)
-  }
+  room: async ({ id }, context) => {
+    return Rooms.find((room) => room.id == id);
+  },
 };

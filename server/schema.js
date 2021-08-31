@@ -1,18 +1,14 @@
-
 import { buildSchema } from "graphql";
 
 export const schema = buildSchema(`
     type Query {
-        users: [User!]!,
-        user(id: Int!): User!
+        rooms(limit: Int, offset: Int): [Room],
+        room(id: Int!): Room!
     }
 
-
-    type User {
+    type Room {
         id: ID!
         name: String!
-        email: String
-        posts: [Post!]
     }
 
     type Post {
@@ -20,6 +16,10 @@ export const schema = buildSchema(`
         title: String!
         published: Boolean!
         link: String
-        author: User!
+    }
+
+    type Comment {
+        id: ID!
+        comment: String!
     }
 `);
