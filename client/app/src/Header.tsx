@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import logo from './assets/logo.svg';
 import { Switch } from '@headlessui/react'
+import {
+  Link
+} from "react-router-dom";
 
 export function Header() {
   const [colorTheme, setColorTheme] = useState("dark");
@@ -13,13 +16,14 @@ export function Header() {
   }, [colorTheme]);
 
   return (
-    <div>
-    <header className="flex items-center justify-between bg-white dark:bg-black p-6">
-      <div className="flex items-center flex-no-shrink text-white mr-6">
-        <img src={logo}></img>
-        <span className="font-semibold text-xl tracking-tight text-black dark:text-white">RoomPalette</span>
-      </div>
-      <div className="w-full block flex-grow flex items-center w-auto">
+    <header className="flex items-center justify-between bg-white dark:bg-black p-5 shadow-md z-50">
+      <Link to="/">
+        <div className="flex items-center flex-no-shrink text-white mr-6">
+          <img src={logo}></img>
+          <span className="font-semibold text-xl tracking-tight text-black dark:text-white">RoomPalette</span>
+        </div>
+      </Link>
+      <div className="w-full block flex-grow flex items-center">
         <div className="text-sm flex-grow">
           {/* <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 mr-4">
             Docs
@@ -57,7 +61,6 @@ export function Header() {
         </div>
       </div>
     </header>
-</div>
   );
 }
 
