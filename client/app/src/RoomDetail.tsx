@@ -5,6 +5,23 @@ import {
   Link
 } from "react-router-dom";
 
+function Comments() {
+  const items = Array(10).fill(0)
+  return items.map(item=>{return (
+    <div className="px-4 mb-2">
+    <span className="flex items-center text-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      </svg>
+      <span>Alice</span>
+    </span>
+    <p className="text-gray-700 text-xs">
+      looks great!
+    </p>
+  </div>
+  )})
+}
+
 export function RoomDetail() {
   return (
     <main className="bg-yellow-50 dark:bg-gray-800 flex-1 overflow-y-auto items-center">
@@ -48,10 +65,13 @@ export function RoomDetail() {
                   HAHAHAHAHAHAHAHAHA
                   HAHAHAHAHAHAHAHAHA
                   HAHAHAHAHAHAHAHAHA
-                  </div>
+                </div>
+                <div className="row-start-5 row-end-7 overflow-y-auto">
+                 {Comments()}
+                </div>
               </div>
             </div>
-            </div>
+          </div>
         </div>
         <Link to="/" class="col-auto cursor-zoom-out">
         </Link>
